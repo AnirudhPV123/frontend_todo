@@ -56,7 +56,7 @@ function TodoList({ todo }) {
           !isEditable ? "visible" : "hidden"
         } `}
       >
-        <img className="w-8" src="../../public/images/edit.svg" alt="" />
+        <img className="w-8" src="../../public/images/edit_icon.png" alt="" />
       </button>
       {/* submit */}
       <button
