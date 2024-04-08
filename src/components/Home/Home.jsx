@@ -26,11 +26,10 @@ function Home() {
   const [completed, setCompleted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-
   useEffect(() => {
     const handleBeforeUnload = async () => {
       const todos = await JSON.parse(localStorage.getItem("todos"));
-      if (todos?.length > 0) {
+      if (todos && typeof todos === "object" && todos.length > 0) {
         await addTodo(todos);
       }
     };
@@ -106,11 +105,7 @@ function Home() {
         className="w-12 bg-yellow-300 overflow-hidden rounded-full border-2 absolute right-4 cursor-pointer"
         onClick={() => setShowMenu(!showMenu)}
       >
-        <img
-          className="w-12"
-          src="./public/images/profile_icon.jpeg"
-          alt=""
-        />
+        <img className="w-12" src="./public/images/profile_icon.jpeg" alt="" />
       </div>
 
       <div
