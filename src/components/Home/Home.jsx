@@ -30,7 +30,7 @@ function Home() {
   useEffect(() => {
     const handleBeforeUnload = async () => {
       const todos = await JSON.parse(localStorage.getItem("todos"));
-      if (todos.length > 0) {
+      if (todos?.length > 0) {
         await addTodo(todos);
       }
     };
@@ -108,7 +108,7 @@ function Home() {
       >
         <img
           className="w-12"
-          src="../../../public/images/profile_icon.jpeg"
+          src="./public/images/profile_icon.jpeg"
           alt=""
         />
       </div>
@@ -153,7 +153,7 @@ function Home() {
           type="submit"
           className="bg-blue-700 cursor-pointer h-full w-16 flex justify-center items-center rounded-md"
         >
-          <img className="w-8" src="../../../public/images/add.svg" alt="" />
+          <img className="w-8" src="./public/images/add.svg" alt="" />
         </button>
       </form>
       <div>
