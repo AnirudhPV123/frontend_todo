@@ -68,13 +68,13 @@ function TodoList({ todo }) {
           isEditable ? "visible" : "hidden"
         } `}
       >
-        <img className="w-5" src="./public/images/submit.svg" alt="" />
+        <img className="w-5" src="/public/images/submit.svg" alt="" />
       </button>
       <button
         onClick={todoDeleteHandler}
         className="bg-red-700 h-full w-14 cursor-pointer flex justify-center items-center rounded-md"
       >
-        <img className="w-8" src="./public/images/delete.svg" alt="" />
+        <img className="w-8" src="/public/images/edit.svg" alt="" />
       </button>
     </li>
   );
