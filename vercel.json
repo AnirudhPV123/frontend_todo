@@ -4,5 +4,14 @@
       "source": "/(.*)",
       "destination": "/"
     }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/images/(.*)",
+      "dest": "/public/images/$1"
+    }
   ]
 }
