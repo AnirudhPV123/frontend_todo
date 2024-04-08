@@ -40,19 +40,20 @@ function Home() {
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, []);
-
-  useEffect(() => {
-    (async () => {
-      setLoading(true);
-      const todos = await getTodo();
-      if (todos.length > 0) {
-        setLoading(false);
-        dispatch(addTodosSlice(todos));
-        localStorage.setItem("todos", JSON.stringify(todos));
-      }
+  
+useEffect(() => {
+  (async () => {
+    setLoading(true);
+    const todos = await getTodo();
+    if (Array.isArray(todos) && todos.length > 0) {
       setLoading(false);
-    })();
-  }, []);
+      dispatch(addTodosSlice(todos));
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+    setLoading(false);
+  })();
+}, []);
+
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
